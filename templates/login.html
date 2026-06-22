@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - ContactOS</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <section id="view-login" class="view active" aria-label="Inicio de sesión">
+      <div class="login-wrapper">
+        <div class="login-card">
+          <header class="login-header">
+            <div class="brand-dot"></div>
+            <h1 class="brand-name">ContactOS</h1>
+            <p class="login-subtitle">Sistema de Gestión de Contactos</p>
+          </header>
+          <form id="form-login" class="login-form" method="POST">
+            <div class="field-group">
+              <label for="login-email">Usuario</label>
+              <input
+                type="text"
+                id="login-email"
+                name="username"
+                placeholder="usuario@contactos.app"
+                required
+              />
+            </div>
+            <div class="field-group">
+              <label for="login-password">Contraseña</label>
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              Iniciar sesión
+            </button>
+            {% if error %}
+            <p class="login-error">{{ error }}</p>
+            {% endif %}
+          </form>
+        </div>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

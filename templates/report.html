@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Reporte | ContactOS</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+
+  <body class="dashboard-body">
+    <main class="report-page">
+      <div class="report-header">
+        <h1>Reporte de Contactos</h1>
+
+        <a href="{{ url_for('dashboard') }}" class="btn btn-ghost">
+          ← Volver
+        </a>
+      </div>
+
+      <section class="report-stats">
+        <div class="report-card">
+          <h3>Total de contactos</h3>
+          <p>{{ total_contacts }}</p>
+        </div>
+
+        <div class="report-card">
+          <h3>Favoritos</h3>
+          <p>{{ favorite_contacts }}</p>
+        </div>
+
+        <div class="report-card">
+          <h3>Categoría más usada</h3>
+          <p>{{ most_used_category }}</p>
+        </div>
+
+        <div class="report-card">
+          <h3>Último contacto</h3>
+
+          <p>
+            {% if latest_contact %} {{ latest_contact.nombre }} {{
+            latest_contact.apellido }} {% else %} Sin contactos {% endif %}
+          </p>
+        </div>
+      </section>
+
+      <section class="report-table-section">
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Teléfono</th>
+              <th>Correo</th>
+              <th>Categoría</th>
+              <th>Favorito</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for contacto in contactos %}
+
+            <tr>
+              <td>{{ contacto.nombre }} {{ contacto.apellido }}</td>
+
+              <td>{{ contacto.telefono }}</td>
+
+              <td>{{ contacto.correo }}</td>
+
+              <td>{{ contacto.categoria }}</td>
+
+              <td>{% if contacto.favorito %} ⭐ {% else %} — {% endif %}</td>
+            </tr>
+
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

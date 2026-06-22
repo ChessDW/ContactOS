@@ -1,0 +1,33 @@
+CONTACTOS FLASK - PROYECTO PROGRAMACIÓN
+
+REQUISITOS:
+- Python 3
+- Flask
+- OpenPyXL
+
+INSTALACIÓN:
+
+pip install flask
+pip install openpyxl
+
+EJECUCIÓN:
+
+python app.py
+
+USUARIO:
+Se puede crear desde la página de registro.
+
+FUNCIONALIDADES:
+- Login
+- Registro
+- CRUD de contactos
+- Persistencia Excel
+- Favoritos
+- Reportes
+- Búsqueda
+- Ordenamiento
+
+ESTRUCTURA:
+- templates/
+- static/
+- data/
