@@ -1,5 +1,3 @@
----
-
 # ContactOS 📇
 
 **ContactOS** es un sistema de gestión de contactos basado en la web que permite a los usuarios organizar su libreta de direcciones de manera eficiente y segura. La aplicación utiliza una arquitectura moderna con un backend en Python y una base de datos basada en archivos de Excel para facilitar la portabilidad de los datos.
